@@ -33,4 +33,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = self.tableViewData[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 3 {
+            self.tableViewData[3] = "not four anymore"
+        }
+        
+        self.tableView.reloadRows(at: [indexPath], with: .fade)
+    }
 }
